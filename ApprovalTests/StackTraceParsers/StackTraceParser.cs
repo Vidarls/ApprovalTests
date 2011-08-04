@@ -51,6 +51,7 @@ namespace ApprovalTests.StackTraceParsers
                 LoadIfApplicable(found, new NUnitStackTraceParser());
                 LoadIfApplicable(found, new VSStackTraceParser());
                 LoadIfApplicable(found, new MbUnitStackTraceParser());
+                LoadIfApplicable(found, new XUnitStackTraceParser());
                 parsers = found.ToArray();
             }
             return parsers;

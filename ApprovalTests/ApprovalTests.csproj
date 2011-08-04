@@ -91,6 +91,7 @@
     <Compile Include="Combinations\Approvals.cs" />
     <Compile Include="Html\Approvals.cs" />
     <Compile Include="Core\IReporterWithApprovalPower.cs" />
+    <Compile Include="Namers\UnitTestFrameworks\XunitStackTraceParser.cs" />
     <Compile Include="RdlcReports\Approvals.cs" />
     <Compile Include="Persistence\DataSets\ColumnDefaults.cs" />
     <Compile Include="Persistence\DataSets\DataSetTestingUtilities.cs" />

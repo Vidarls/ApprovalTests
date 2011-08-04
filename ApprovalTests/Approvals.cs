@@ -16,6 +16,22 @@ namespace ApprovalTests
 	{
 		#region Text
 
+        static Func<IApprovalNamer> _defaultNamerSource = (() => new UnitTestFrameworkNamer());
+
+        public static Func<IApprovalNamer> DefaultNamerSource
+        {
+            private get { return _defaultNamerSource; }
+            set { _defaultNamerSource = value; }
+        }
+
+        static Func<IApprovalFailureReporter> _defaultReporterSource = (() => new QuietReporter());
+
+        public static Func<IApprovalFailureReporter> DefaultReporterSource
+        {
+            private get { return _defaultReporterSource; }
+            set { _defaultReporterSource = value; }
+        }
+
 		public static void Approve(string text)
 		{
 			Approve(new ApprovalTextWriter(text));
@@ -23,7 +39,7 @@ namespace ApprovalTests
 
 		public static IApprovalNamer GetDefaultNamer()
 		{
-			return new UnitTestFrameworkNamer();
+            return DefaultNamerSource();
 		}
 
 		public static void Approve(object text)
@@ -80,7 +96,7 @@ namespace ApprovalTests
 
 		public static IApprovalFailureReporter GetReporter()
 		{
-			return GetReporter(new QuietReporter());
+            return GetReporter(DefaultReporterSource());
 		}
 
 		public static IApprovalFailureReporter GetReporter(IApprovalFailureReporter defaultIfNotFound)
