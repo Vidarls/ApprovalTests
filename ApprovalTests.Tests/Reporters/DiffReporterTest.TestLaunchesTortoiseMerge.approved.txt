@@ -1,0 +1,1 @@
+tortoisemerge.exe /base:"../../b.txt" /mine:"../../a.txt"
