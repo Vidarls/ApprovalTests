@@ -6,6 +6,11 @@ namespace ApprovalUtilities.SimpleLogger
 	{
 		private StringBuilder sb = new StringBuilder();
 
+		public void Append(string text)
+		{
+			sb.Append(text);
+		}
+
 		public void AppendLine(string text)
 		{
 			sb.Append(text + "\r\n");
